@@ -2,4 +2,11 @@
 
 <%= render 'form', feed: @feed %>
 
+<div class="blog_content">
+    <label for="blog_content">つぶやき</label>
+    <input type="text" name="blog[content]">
+</div>
+<input type="submit" name="commit" value="つぶやく" data-disable-with="Create Blog">
+
+<br>
 <%= link_to 'Back', feeds_path %>

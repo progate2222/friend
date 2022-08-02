@@ -6,10 +6,15 @@ class FeedsController < ApplicationController
   end
 
   def show
+    @feed = Feed.find(params[:id])
   end
 
   def new
-    @feed = Feed.new
+    if params[:back]
+      @feed = Feed.new(feed_params)
+    else
+      @feed = Feed.new
+    end
   end
 
   def edit
@@ -50,7 +55,12 @@ class FeedsController < ApplicationController
     end
   end
 
+  def confirm
+    @feed = Feed.new(feed_params)
+  end
+
   private
+  
     def set_feed
       @feed = Feed.find(params[:id])
     end
