@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.1'
 
-gem 'rails', '~> 6.1.6'
+gem 'rails', '~> 6.1.6.1'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
@@ -33,3 +33,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bcrypt'
+
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'mimemagic', '0.3.7'
