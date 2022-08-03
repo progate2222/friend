@@ -21,7 +21,7 @@ class FeedsController < ApplicationController
   end
 
   def create
-    @feed = Feed.new(feed_params)
+    @feed = current_user.feeds.build(feed_params)
 
     respond_to do |format|
       if @feed.save
@@ -56,7 +56,8 @@ class FeedsController < ApplicationController
   end
 
   def confirm
-    @feed = Feed.new(feed_params)
+    @feed = current_user.feeds.build(feed_params)
+    render :new if @feed.invalid?
   end
 
   private
@@ -66,6 +67,6 @@ class FeedsController < ApplicationController
     end
 
     def feed_params
-      params.require(:feed).permit(:image, :image_cache)
+      params.require(:feed).permit(:image, :image_cache, :content)
     end
 end
