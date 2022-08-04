@@ -8,12 +8,12 @@
 
   <p>
     <strong>Image:</strong>
-    <%= image_tag @feed.image.url %>
+    <%= image_tag @feed.image.url, size: "300x300"  %>
   </p>
 
   <p>
     <strong>content:</strong>
-    <p>本文：<%= @feed.content %></p>
+    <%= @feed.content %>
   </p>
 
   <%= link_to 'Edit', edit_feed_path(@feed) %> |
